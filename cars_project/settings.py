@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from pickle import FALSE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,6 +53,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'cars_project.urls'
 
+
+
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -71,7 +76,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cars_project.wsgi.application'
 
 
-
+REST_FRAMEWORK = {
+    'COERCE_DECIMAL_TO_STRING': FALSE
+}
 
 
 # Password validation
